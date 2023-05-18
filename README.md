@@ -53,5 +53,5 @@ In your browser access localhost:3000
 
 ## Run the tests
 ```
-rspec spec
+docker-compose exec api rspec spec
 ```
