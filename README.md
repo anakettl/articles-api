@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a API RESTful about articles
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Git: https://git-scm.com/
 
-* System dependencies
+Docker: https://www.docker.com/get-started
 
-* Configuration
+Docker Compose: https://docs.docker.com/compose/install/
 
-* Database creation
+## Setup
 
-* Database initialization
+1. Clone this project
+```
+git clone https://github.com/anakettl/articles-api.git
+```
 
-* How to run the test suite
+2. Go into the folder
+```
+cd articles-api
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Build the containers
+```
+docker-compose build
+```
 
-* Deployment instructions
+4. Create the database
+```
+docker-compose run api rails db:create
+```
 
-* ...
+5. Run the migrations
+```
+docker-compose run web rails db:migrate
+```
+
+6. Run the seeds
+```
+docker-compose run web rails db:seed
+```
+
+7. Run the rails server
+```
+docker-compose up
+```
+
+## Access
+
+In your browser access localhost:3000
+
+## Run the tests
+```
+rspec spec
+```
