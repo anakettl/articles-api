@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
     article.save!
 
-    render json: { dep: reseller }, status: 200
+    render json: { dep: article }, status: 200
   end
 
   private
